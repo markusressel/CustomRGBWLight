@@ -77,10 +77,7 @@ public:
   LightTraits get_traits() override {
     auto traits = LightTraits();
     
-    traits.set_supports_brightness(true);
-    traits.set_supports_rgb(true);
-    traits.set_supports_rgb_white_value(false);
-    traits.set_supports_color_temperature(true);
+    traits.set_supported_color_modes({light::ColorMode::BRIGHTNESS, light::ColorMode::RGB, light::ColorMode::COLOR_TEMPERATURE});
     traits.set_min_mireds(minMired); // home assistant minimum 153
     traits.set_max_mireds(maxMired); // home assistant maximum 500
 
